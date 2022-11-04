@@ -1,0 +1,1 @@
+cat /etc/passwd | while read line; do echo $line | base64; done

@@ -1,0 +1,1 @@
+cat /etc/passwd | xargs -L 1 -I {} bash -c "echo '{}' | md5sum" | awk '{print $1}’

